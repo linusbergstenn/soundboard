@@ -1,0 +1,73 @@
+
+
+.Home{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  .container{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+    &:hover{
+      width: 95vw;
+    }
+    .cta-icon{
+      transform: scale(2);
+      transition: all .2s;
+      background: rgba( white, .8);
+      color: black;
+      &:hover{
+        transform: scale(4);
+      }
+    }
+  }
+  .home-container{
+    background: url('../../imgs/team.jpg') top no-repeat;
+    .cta-icon{
+    }
+  }
+  .away-container{
+    background: url('../../imgs/enemy.jpg') center no-repeat;
+    .cta-icon{
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Home{
+
+    .container{
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
+      &:hover{
+        width: 95vw;
+        .cta-icon{
+          display: inline-block;
+          transform: scale(3);
+        }
+      }
+      .cta-icon{
+        display: none;
+        transform: scale(2);
+        transition: all .2s;
+        background: rgba( white, .8);
+        color: black;
+        &:hover{
+          transform: scale(4);
+        }
+      }
+    }
+    .home-container{
+      background: url('../../imgs/team.jpg') top no-repeat;
+    }
+    .away-container{
+      background: url('../../imgs/enemy.jpg') center no-repeat;
+    }
+  }
+}
