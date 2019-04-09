@@ -32,29 +32,33 @@ class MusicButton extends Component{
     };
 
     togglePlay = () => {
-        let stop = () =>{
-            this.audio.pause();
-            this.audio.currentTime = 0;
-        }
+
         this.setState({ play: !this.state.play }, () => {
-            this.state.play ? this.audio.play() : stop();
+            this.state.play ? this.audio.play() : this.audio.pause();
         });
+    };
+
+    stopPlay = () => {
+        this.audio.pause();
+        this.audio.currentTime = 0;
+        this.setState({play: false})
     };
 
     render() {
         const { classes } = this.props;
         const bull = <span className={classes.bullet}>•</span>;
-
+        let title = this.props.title.slice(0, -4);
         return(
             <Card className={classes.card}>
                 <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {this.props.title}
+                        {title}
                     </Typography>
 
                 </CardContent>
                 <CardActions className='media-controller'>
-                    <Button size="small" onClick={ () => this.togglePlay()}> {this.state.play ? <StopRounded /> : <PlayArrowRounded />} </Button>
+                    <Button size="small" onClick={ () => this.togglePlay()}> {this.state.play ? <PauseCircleOutlineRounded /> : <PlayArrowRounded />} </Button>
+                    <Button size="small" onClick={ () => this.stopPlay()}> <StopRounded /></Button>
                 </CardActions>
             </Card>
         )
