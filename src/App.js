@@ -5,10 +5,9 @@ import './App.scss';
 class App extends Component {
 
   render() {
-
     return (
       <div className="App">
-        <Router />
+          <Router />
       </div>
     );
   }

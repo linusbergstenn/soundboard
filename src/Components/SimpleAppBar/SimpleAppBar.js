@@ -6,25 +6,32 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {NavLink} from "react-router-dom";
 
-const styles = {
+const styles = theme => ({
     root: {
         flexGrow: 1,
     },
+    appbar:{
+        background: theme.palette.primary.main
+    },
+    typography: {
+        padding: '1rem .5rem'
+    },
     link: {
         color: 'inherit',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        textTransform: 'uppercase',
     }
-};
+});
 
 function SimpleAppBar(props) {
     const { classes } = props;
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="default">
-                <Toolbar>
-                    <Typography variant="h4" color="inherit">
-                        <NavLink className={classes.link} to={'/'}>{props.title}</NavLink>
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                    <Typography variant="h4" color="inherit" className={classes.typography}>
+                        <NavLink to={'/'} className={classes.link}>{props.title}</NavLink>
                     </Typography>
                 </Toolbar>
             </AppBar>

@@ -4,49 +4,56 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-
-  .container{
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .2s;
-    &:hover{
-      width: 95vw;
-    }
-    .cta-icon{
-      transform: scale(2);
-      transition: all .2s;
-      background: rgba( white, .8);
-      color: black;
-      &:hover{
-        transform: scale(4);
-      }
-    }
-  }
-  .home-container{
-    background: url('../../imgs/team.jpg') top no-repeat;
-    .cta-icon{
-    }
-  }
-  .away-container{
-    background: url('../../imgs/enemy.jpg') center no-repeat;
-    .cta-icon{
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .Home{
-
     .container{
       width: 50vw;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       transition: all .2s;
       &:hover{
         width: 95vw;
+      }
+      .cta-icon{
+        transform: scale(2);
+        transition: all .2s;
+        color: black;
+        &:hover{
+          transform: scale(4);
+        }
+      }
+      .home-container{
+        height: 100%;
+        width: 100%;
+        background: url('../../imgs/team.jpg') center;
+        background-size: cover;
+        .cta-icon{
+        }
+      }
+      .away-container{
+        height: 100%;
+        width: 100%;
+        background: url('../../imgs/away.svg') center;
+        background-size: cover;
+        .cta-icon{
+        }
+      }
+    }
+  }
+
+@media screen and (max-width: 800px) {
+  .Home{
+    flex-direction: column;
+    .container{
+      width: 100vw;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
+      &:hover{
+        width: 100vw;
+        height: 95vh;
         .cta-icon{
           display: inline-block;
           transform: scale(3);
@@ -62,12 +69,6 @@
           transform: scale(4);
         }
       }
-    }
-    .home-container{
-      background: url('../../imgs/team.jpg') top no-repeat;
-    }
-    .away-container{
-      background: url('../../imgs/enemy.jpg') center no-repeat;
     }
   }
 }

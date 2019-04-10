@@ -4,6 +4,7 @@ import { MemoryRouter, Route, Switch } from "react-router-dom";
 import SimpleAppBar from "../Components/SimpleAppBar/SimpleAppBar";
 import HomeSounds from "./HomeSounds/HomeSounds";
 import AwaySounds from "./AwaySounds/AwaySounds";
+import MuiThemeProvider from "@material-ui/core/es/styles/MuiThemeProvider";
 
 const Router = (props) => {
     return(
